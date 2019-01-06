@@ -11,6 +11,10 @@ import { Fonts, Colors, Metrics } from "../Themes/";
 //import { widthPercentageToDP, heightPercentageToDP } from "../Utils/Dimensions";
 
 export default class LaunchScreen extends Component {
+  // hide header AppBar
+  static navigationOptions = {
+    header: null
+  };
   render() {
     return (
       <View style={styles.mainContainer}>
@@ -25,11 +29,12 @@ export default class LaunchScreen extends Component {
           <RoundedButton
             text="Akun Baru"
             aktif="1"
-            onPress={() => window.alert("Rounded Button Pressed!")}
+            onPress={() => this.props.navigation.navigate("RegisterScreen")}
           />
           <RoundedButton
             text="Login"
-            onPress={() => window.alert("Rounded Jos Pressed!")}
+            // onPress={() => window.alert("Rounded Jos Pressed!")}
+            onPress={() => this.props.navigation.navigate("LoginScreen")}
           />
         </View>
       </View>
